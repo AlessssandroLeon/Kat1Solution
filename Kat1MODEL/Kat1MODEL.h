@@ -8,7 +8,7 @@ namespace Kat1MODEL {
     ref class RobotAgronomo;
     ref class Planta;
     ref class Sensor;
-
+    //el neto estuvo aqui
     //Usuario y subclases
     public ref class Usuario {
     public:
