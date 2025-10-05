@@ -130,6 +130,7 @@ namespace Kat1GUI {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->labelTituloPlantas = (gcnew System::Windows::Forms::Label());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->EstadoUsuariotext = (gcnew System::Windows::Forms::TextBox());
@@ -155,6 +156,7 @@ namespace Kat1GUI {
 			this->Status = (gcnew System::Windows::Forms::Label());
 			this->UserID = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->EstadoRobottext = (gcnew System::Windows::Forms::TextBox());
@@ -170,8 +172,6 @@ namespace Kat1GUI {
 			this->EstadoN = (gcnew System::Windows::Forms::Label());
 			this->RobotName = (gcnew System::Windows::Forms::Label());
 			this->RobotID = (gcnew System::Windows::Forms::Label());
-			this->labelTituloPlantas = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvUsuarios))->BeginInit();
@@ -183,11 +183,11 @@ namespace Kat1GUI {
 			// 
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
-			this->tabControl1->Location = System::Drawing::Point(2, 10);
-			this->tabControl1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tabControl1->Location = System::Drawing::Point(3, 12);
+			this->tabControl1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(815, 453);
+			this->tabControl1->Size = System::Drawing::Size(1087, 558);
 			this->tabControl1->TabIndex = 0;
 			// 
 			// tabPage1
@@ -211,22 +211,33 @@ namespace Kat1GUI {
 			this->tabPage1->Controls->Add(this->UserRole);
 			this->tabPage1->Controls->Add(this->Status);
 			this->tabPage1->Controls->Add(this->UserID);
-			this->tabPage1->Location = System::Drawing::Point(4, 22);
-			this->tabPage1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tabPage1->Location = System::Drawing::Point(4, 25);
+			this->tabPage1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->tabPage1->Size = System::Drawing::Size(807, 427);
+			this->tabPage1->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tabPage1->Size = System::Drawing::Size(1079, 529);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Usuarios";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			this->tabPage1->Click += gcnew System::EventHandler(this, &AdminisitradorForm::tabPage1_Click);
 			// 
+			// labelTituloPlantas
+			// 
+			this->labelTituloPlantas->AutoSize = true;
+			this->labelTituloPlantas->Font = (gcnew System::Drawing::Font(L"Calibri", 14, System::Drawing::FontStyle::Bold));
+			this->labelTituloPlantas->Location = System::Drawing::Point(388, 216);
+			this->labelTituloPlantas->Name = L"labelTituloPlantas";
+			this->labelTituloPlantas->Size = System::Drawing::Size(263, 29);
+			this->labelTituloPlantas->TabIndex = 22;
+			this->labelTituloPlantas->Text = L"USUARIOS REGISTRADOS";
+			this->labelTituloPlantas->Click += gcnew System::EventHandler(this, &AdminisitradorForm::labelTituloPlantas_Click);
+			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(701, 384);
-			this->button4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button4->Location = System::Drawing::Point(935, 473);
+			this->button4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(75, 19);
+			this->button4->Size = System::Drawing::Size(100, 23);
 			this->button4->TabIndex = 21;
 			this->button4->Text = L"Finalizar";
 			this->button4->UseVisualStyleBackColor = true;
@@ -234,10 +245,10 @@ namespace Kat1GUI {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(11, 384);
-			this->button3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button3->Location = System::Drawing::Point(15, 473);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(81, 19);
+			this->button3->Size = System::Drawing::Size(108, 23);
 			this->button3->TabIndex = 20;
 			this->button3->Text = L"Regresar";
 			this->button3->UseVisualStyleBackColor = true;
@@ -245,19 +256,19 @@ namespace Kat1GUI {
 			// 
 			// EstadoUsuariotext
 			// 
-			this->EstadoUsuariotext->Location = System::Drawing::Point(356, 83);
-			this->EstadoUsuariotext->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->EstadoUsuariotext->Location = System::Drawing::Point(530, 83);
+			this->EstadoUsuariotext->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EstadoUsuariotext->Name = L"EstadoUsuariotext";
-			this->EstadoUsuariotext->Size = System::Drawing::Size(76, 20);
+			this->EstadoUsuariotext->Size = System::Drawing::Size(100, 22);
 			this->EstadoUsuariotext->TabIndex = 19;
 			this->EstadoUsuariotext->TextChanged += gcnew System::EventHandler(this, &AdminisitradorForm::EstadoUsuariotext_TextChanged);
 			// 
 			// RolUsuariotext
 			// 
-			this->RolUsuariotext->Location = System::Drawing::Point(356, 129);
-			this->RolUsuariotext->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->RolUsuariotext->Location = System::Drawing::Point(530, 140);
+			this->RolUsuariotext->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->RolUsuariotext->Name = L"RolUsuariotext";
-			this->RolUsuariotext->Size = System::Drawing::Size(76, 20);
+			this->RolUsuariotext->Size = System::Drawing::Size(100, 22);
 			this->RolUsuariotext->TabIndex = 18;
 			// 
 			// dgvUsuarios
@@ -267,12 +278,12 @@ namespace Kat1GUI {
 				this->ID, this->RolC,
 					this->UsernameC, this->PasswordC, this->EmailC, this->EstadoC
 			});
-			this->dgvUsuarios->Location = System::Drawing::Point(0, 200);
-			this->dgvUsuarios->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dgvUsuarios->Location = System::Drawing::Point(129, 247);
+			this->dgvUsuarios->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dgvUsuarios->Name = L"dgvUsuarios";
 			this->dgvUsuarios->RowHeadersWidth = 51;
 			this->dgvUsuarios->RowTemplate->Height = 24;
-			this->dgvUsuarios->Size = System::Drawing::Size(803, 180);
+			this->dgvUsuarios->Size = System::Drawing::Size(800, 222);
 			this->dgvUsuarios->TabIndex = 17;
 			this->dgvUsuarios->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AdminisitradorForm::dataGridView1_CellContentClick);
 			// 
@@ -320,10 +331,10 @@ namespace Kat1GUI {
 			// 
 			// EliminarUsuarioBoton
 			// 
-			this->EliminarUsuarioBoton->Location = System::Drawing::Point(567, 142);
-			this->EliminarUsuarioBoton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->EliminarUsuarioBoton->Location = System::Drawing::Point(834, 143);
+			this->EliminarUsuarioBoton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EliminarUsuarioBoton->Name = L"EliminarUsuarioBoton";
-			this->EliminarUsuarioBoton->Size = System::Drawing::Size(71, 28);
+			this->EliminarUsuarioBoton->Size = System::Drawing::Size(95, 34);
 			this->EliminarUsuarioBoton->TabIndex = 16;
 			this->EliminarUsuarioBoton->Text = L"Eliminar";
 			this->EliminarUsuarioBoton->UseVisualStyleBackColor = true;
@@ -331,10 +342,10 @@ namespace Kat1GUI {
 			// 
 			// ModificarUsuarioBoton
 			// 
-			this->ModificarUsuarioBoton->Location = System::Drawing::Point(567, 98);
-			this->ModificarUsuarioBoton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ModificarUsuarioBoton->Location = System::Drawing::Point(834, 89);
+			this->ModificarUsuarioBoton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ModificarUsuarioBoton->Name = L"ModificarUsuarioBoton";
-			this->ModificarUsuarioBoton->Size = System::Drawing::Size(71, 28);
+			this->ModificarUsuarioBoton->Size = System::Drawing::Size(95, 34);
 			this->ModificarUsuarioBoton->TabIndex = 15;
 			this->ModificarUsuarioBoton->Text = L"Modificar";
 			this->ModificarUsuarioBoton->UseVisualStyleBackColor = true;
@@ -342,10 +353,10 @@ namespace Kat1GUI {
 			// 
 			// AgregarUsuarioBoton
 			// 
-			this->AgregarUsuarioBoton->Location = System::Drawing::Point(567, 53);
-			this->AgregarUsuarioBoton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->AgregarUsuarioBoton->Location = System::Drawing::Point(834, 33);
+			this->AgregarUsuarioBoton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->AgregarUsuarioBoton->Name = L"AgregarUsuarioBoton";
-			this->AgregarUsuarioBoton->Size = System::Drawing::Size(71, 28);
+			this->AgregarUsuarioBoton->Size = System::Drawing::Size(95, 34);
 			this->AgregarUsuarioBoton->TabIndex = 14;
 			this->AgregarUsuarioBoton->Text = L"Agregar";
 			this->AgregarUsuarioBoton->UseVisualStyleBackColor = true;
@@ -353,84 +364,79 @@ namespace Kat1GUI {
 			// 
 			// PasswordText
 			// 
-			this->PasswordText->Location = System::Drawing::Point(114, 166);
-			this->PasswordText->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->PasswordText->Location = System::Drawing::Point(151, 191);
+			this->PasswordText->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->PasswordText->Name = L"PasswordText";
-			this->PasswordText->Size = System::Drawing::Size(76, 20);
+			this->PasswordText->Size = System::Drawing::Size(100, 22);
 			this->PasswordText->TabIndex = 11;
 			// 
 			// UserNameText
 			// 
-			this->UserNameText->Location = System::Drawing::Point(114, 119);
-			this->UserNameText->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->UserNameText->Location = System::Drawing::Point(151, 133);
+			this->UserNameText->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->UserNameText->Name = L"UserNameText";
-			this->UserNameText->Size = System::Drawing::Size(76, 20);
+			this->UserNameText->Size = System::Drawing::Size(100, 22);
 			this->UserNameText->TabIndex = 10;
 			// 
 			// EmailUserText
 			// 
-			this->EmailUserText->Location = System::Drawing::Point(114, 78);
-			this->EmailUserText->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->EmailUserText->Location = System::Drawing::Point(151, 83);
+			this->EmailUserText->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EmailUserText->Name = L"EmailUserText";
-			this->EmailUserText->Size = System::Drawing::Size(76, 20);
+			this->EmailUserText->Size = System::Drawing::Size(100, 22);
 			this->EmailUserText->TabIndex = 9;
 			// 
 			// IDUsuarioText
 			// 
-			this->IDUsuarioText->Location = System::Drawing::Point(114, 35);
-			this->IDUsuarioText->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->IDUsuarioText->Location = System::Drawing::Point(151, 30);
+			this->IDUsuarioText->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->IDUsuarioText->Name = L"IDUsuarioText";
-			this->IDUsuarioText->Size = System::Drawing::Size(76, 20);
+			this->IDUsuarioText->Size = System::Drawing::Size(100, 22);
 			this->IDUsuarioText->TabIndex = 6;
 			this->IDUsuarioText->TextChanged += gcnew System::EventHandler(this, &AdminisitradorForm::IDText_TextChanged);
 			// 
 			// Password
 			// 
 			this->Password->AutoSize = true;
-			this->Password->Location = System::Drawing::Point(48, 166);
-			this->Password->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Password->Location = System::Drawing::Point(63, 191);
 			this->Password->Name = L"Password";
-			this->Password->Size = System::Drawing::Size(64, 13);
+			this->Password->Size = System::Drawing::Size(79, 16);
 			this->Password->TabIndex = 5;
 			this->Password->Text = L"Contraseña:";
 			// 
 			// Username
 			// 
 			this->Username->AutoSize = true;
-			this->Username->Location = System::Drawing::Point(48, 124);
-			this->Username->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Username->Location = System::Drawing::Point(63, 140);
 			this->Username->Name = L"Username";
-			this->Username->Size = System::Drawing::Size(47, 13);
+			this->Username->Size = System::Drawing::Size(59, 16);
 			this->Username->TabIndex = 4;
 			this->Username->Text = L"Nombre:";
 			// 
 			// Email
 			// 
 			this->Email->AutoSize = true;
-			this->Email->Location = System::Drawing::Point(48, 83);
-			this->Email->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Email->Location = System::Drawing::Point(63, 89);
 			this->Email->Name = L"Email";
-			this->Email->Size = System::Drawing::Size(35, 13);
+			this->Email->Size = System::Drawing::Size(44, 16);
 			this->Email->TabIndex = 3;
 			this->Email->Text = L"Email:";
 			// 
 			// UserRole
 			// 
 			this->UserRole->AutoSize = true;
-			this->UserRole->Location = System::Drawing::Point(285, 128);
-			this->UserRole->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->UserRole->Location = System::Drawing::Point(435, 139);
 			this->UserRole->Name = L"UserRole";
-			this->UserRole->Size = System::Drawing::Size(26, 13);
+			this->UserRole->Size = System::Drawing::Size(31, 16);
 			this->UserRole->TabIndex = 2;
 			this->UserRole->Text = L"Rol:";
 			// 
 			// Status
 			// 
 			this->Status->AutoSize = true;
-			this->Status->Location = System::Drawing::Point(285, 85);
-			this->Status->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Status->Location = System::Drawing::Point(435, 86);
 			this->Status->Name = L"Status";
-			this->Status->Size = System::Drawing::Size(43, 13);
+			this->Status->Size = System::Drawing::Size(53, 16);
 			this->Status->TabIndex = 1;
 			this->Status->Text = L"Estado:";
 			this->Status->Click += gcnew System::EventHandler(this, &AdminisitradorForm::label1_Click_1);
@@ -438,10 +444,9 @@ namespace Kat1GUI {
 			// UserID
 			// 
 			this->UserID->AutoSize = true;
-			this->UserID->Location = System::Drawing::Point(48, 37);
-			this->UserID->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->UserID->Location = System::Drawing::Point(63, 33);
 			this->UserID->Name = L"UserID";
-			this->UserID->Size = System::Drawing::Size(21, 13);
+			this->UserID->Size = System::Drawing::Size(23, 16);
 			this->UserID->TabIndex = 0;
 			this->UserID->Text = L"ID:";
 			this->UserID->Click += gcnew System::EventHandler(this, &AdminisitradorForm::label1_Click);
@@ -461,22 +466,32 @@ namespace Kat1GUI {
 			this->tabPage2->Controls->Add(this->EstadoN);
 			this->tabPage2->Controls->Add(this->RobotName);
 			this->tabPage2->Controls->Add(this->RobotID);
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tabPage2->Location = System::Drawing::Point(4, 25);
+			this->tabPage2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->tabPage2->Size = System::Drawing::Size(807, 427);
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tabPage2->Size = System::Drawing::Size(1079, 529);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Robots";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			this->tabPage2->Click += gcnew System::EventHandler(this, &AdminisitradorForm::tabPage2_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Calibri", 14, System::Drawing::FontStyle::Bold));
+			this->label1->Location = System::Drawing::Point(458, 223);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(240, 29);
+			this->label1->TabIndex = 23;
+			this->label1->Text = L"ROBOTS REGISTRADOS";
+			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(717, 381);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button2->Location = System::Drawing::Point(956, 469);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(86, 19);
+			this->button2->Size = System::Drawing::Size(115, 23);
 			this->button2->TabIndex = 12;
 			this->button2->Text = L"Finalizar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -484,10 +499,10 @@ namespace Kat1GUI {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(10, 381);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Location = System::Drawing::Point(13, 469);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(86, 19);
+			this->button1->Size = System::Drawing::Size(115, 23);
 			this->button1->TabIndex = 11;
 			this->button1->Text = L"Regresar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -495,10 +510,10 @@ namespace Kat1GUI {
 			// 
 			// EstadoRobottext
 			// 
-			this->EstadoRobottext->Location = System::Drawing::Point(200, 164);
-			this->EstadoRobottext->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->EstadoRobottext->Location = System::Drawing::Point(267, 202);
+			this->EstadoRobottext->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EstadoRobottext->Name = L"EstadoRobottext";
-			this->EstadoRobottext->Size = System::Drawing::Size(76, 20);
+			this->EstadoRobottext->Size = System::Drawing::Size(100, 22);
 			this->EstadoRobottext->TabIndex = 10;
 			// 
 			// dgvRobots
@@ -508,12 +523,12 @@ namespace Kat1GUI {
 				this->IDC, this->NombreRobot,
 					this->Estado
 			});
-			this->dgvRobots->Location = System::Drawing::Point(200, 206);
-			this->dgvRobots->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dgvRobots->Location = System::Drawing::Point(364, 254);
+			this->dgvRobots->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dgvRobots->Name = L"dgvRobots";
 			this->dgvRobots->RowHeadersWidth = 51;
 			this->dgvRobots->RowTemplate->Height = 24;
-			this->dgvRobots->Size = System::Drawing::Size(429, 132);
+			this->dgvRobots->Size = System::Drawing::Size(422, 162);
 			this->dgvRobots->TabIndex = 9;
 			// 
 			// IDC
@@ -539,10 +554,10 @@ namespace Kat1GUI {
 			// 
 			// EliminarRobotBoton
 			// 
-			this->EliminarRobotBoton->Location = System::Drawing::Point(571, 150);
-			this->EliminarRobotBoton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->EliminarRobotBoton->Location = System::Drawing::Point(792, 185);
+			this->EliminarRobotBoton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EliminarRobotBoton->Name = L"EliminarRobotBoton";
-			this->EliminarRobotBoton->Size = System::Drawing::Size(64, 27);
+			this->EliminarRobotBoton->Size = System::Drawing::Size(85, 33);
 			this->EliminarRobotBoton->TabIndex = 8;
 			this->EliminarRobotBoton->Text = L"Eliminar";
 			this->EliminarRobotBoton->UseVisualStyleBackColor = true;
@@ -550,10 +565,10 @@ namespace Kat1GUI {
 			// 
 			// ModificarRobotBoton
 			// 
-			this->ModificarRobotBoton->Location = System::Drawing::Point(571, 97);
-			this->ModificarRobotBoton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ModificarRobotBoton->Location = System::Drawing::Point(792, 119);
+			this->ModificarRobotBoton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ModificarRobotBoton->Name = L"ModificarRobotBoton";
-			this->ModificarRobotBoton->Size = System::Drawing::Size(64, 27);
+			this->ModificarRobotBoton->Size = System::Drawing::Size(85, 33);
 			this->ModificarRobotBoton->TabIndex = 7;
 			this->ModificarRobotBoton->Text = L"Modificar";
 			this->ModificarRobotBoton->UseVisualStyleBackColor = true;
@@ -561,10 +576,10 @@ namespace Kat1GUI {
 			// 
 			// AgregarRobotBoton
 			// 
-			this->AgregarRobotBoton->Location = System::Drawing::Point(571, 46);
-			this->AgregarRobotBoton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->AgregarRobotBoton->Location = System::Drawing::Point(792, 57);
+			this->AgregarRobotBoton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->AgregarRobotBoton->Name = L"AgregarRobotBoton";
-			this->AgregarRobotBoton->Size = System::Drawing::Size(64, 27);
+			this->AgregarRobotBoton->Size = System::Drawing::Size(85, 33);
 			this->AgregarRobotBoton->TabIndex = 6;
 			this->AgregarRobotBoton->Text = L"Agregar";
 			this->AgregarRobotBoton->UseVisualStyleBackColor = true;
@@ -572,27 +587,26 @@ namespace Kat1GUI {
 			// 
 			// NombreRobottext
 			// 
-			this->NombreRobottext->Location = System::Drawing::Point(200, 106);
-			this->NombreRobottext->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->NombreRobottext->Location = System::Drawing::Point(267, 130);
+			this->NombreRobottext->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->NombreRobottext->Name = L"NombreRobottext";
-			this->NombreRobottext->Size = System::Drawing::Size(76, 20);
+			this->NombreRobottext->Size = System::Drawing::Size(100, 22);
 			this->NombreRobottext->TabIndex = 4;
 			// 
 			// IDRobottext
 			// 
-			this->IDRobottext->Location = System::Drawing::Point(200, 44);
-			this->IDRobottext->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->IDRobottext->Location = System::Drawing::Point(267, 54);
+			this->IDRobottext->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->IDRobottext->Name = L"IDRobottext";
-			this->IDRobottext->Size = System::Drawing::Size(76, 20);
+			this->IDRobottext->Size = System::Drawing::Size(100, 22);
 			this->IDRobottext->TabIndex = 3;
 			// 
 			// EstadoN
 			// 
 			this->EstadoN->AutoSize = true;
-			this->EstadoN->Location = System::Drawing::Point(126, 164);
-			this->EstadoN->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->EstadoN->Location = System::Drawing::Point(168, 202);
 			this->EstadoN->Name = L"EstadoN";
-			this->EstadoN->Size = System::Drawing::Size(40, 13);
+			this->EstadoN->Size = System::Drawing::Size(50, 16);
 			this->EstadoN->TabIndex = 2;
 			this->EstadoN->Text = L"Estado";
 			this->EstadoN->Click += gcnew System::EventHandler(this, &AdminisitradorForm::label1_Click_3);
@@ -600,55 +614,30 @@ namespace Kat1GUI {
 			// RobotName
 			// 
 			this->RobotName->AutoSize = true;
-			this->RobotName->Location = System::Drawing::Point(126, 106);
-			this->RobotName->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->RobotName->Location = System::Drawing::Point(168, 130);
 			this->RobotName->Name = L"RobotName";
-			this->RobotName->Size = System::Drawing::Size(47, 13);
+			this->RobotName->Size = System::Drawing::Size(59, 16);
 			this->RobotName->TabIndex = 1;
 			this->RobotName->Text = L"Nombre:";
 			// 
 			// RobotID
 			// 
 			this->RobotID->AutoSize = true;
-			this->RobotID->Location = System::Drawing::Point(126, 46);
-			this->RobotID->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->RobotID->Location = System::Drawing::Point(168, 57);
 			this->RobotID->Name = L"RobotID";
-			this->RobotID->Size = System::Drawing::Size(21, 13);
+			this->RobotID->Size = System::Drawing::Size(23, 16);
 			this->RobotID->TabIndex = 0;
 			this->RobotID->Text = L"ID:";
 			this->RobotID->Click += gcnew System::EventHandler(this, &AdminisitradorForm::label1_Click_2);
 			// 
-			// labelTituloPlantas
-			// 
-			this->labelTituloPlantas->AutoSize = true;
-			this->labelTituloPlantas->Font = (gcnew System::Drawing::Font(L"Calibri", 14, System::Drawing::FontStyle::Bold));
-			this->labelTituloPlantas->Location = System::Drawing::Point(284, 173);
-			this->labelTituloPlantas->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->labelTituloPlantas->Name = L"labelTituloPlantas";
-			this->labelTituloPlantas->Size = System::Drawing::Size(208, 23);
-			this->labelTituloPlantas->TabIndex = 22;
-			this->labelTituloPlantas->Text = L"USUARIOS REGISTRADOS";
-			this->labelTituloPlantas->Click += gcnew System::EventHandler(this, &AdminisitradorForm::labelTituloPlantas_Click);
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Calibri", 14, System::Drawing::FontStyle::Bold));
-			this->label1->Location = System::Drawing::Point(319, 181);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(192, 23);
-			this->label1->TabIndex = 23;
-			this->label1->Text = L"ROBOTS REGISTRADOS";
-			// 
 			// AdminisitradorForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(828, 442);
+			this->ClientSize = System::Drawing::Size(1104, 544);
 			this->Controls->Add(this->tabControl1);
 			this->IsMdiContainer = true;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"AdminisitradorForm";
 			this->Text = L"AdminisitradorForm";
 			this->tabControl1->ResumeLayout(false);
