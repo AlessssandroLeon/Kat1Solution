@@ -102,6 +102,8 @@ namespace Kat1GUI {
 		void InitializeComponent(void)
 		{
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->dgvPlantas = (gcnew System::Windows::Forms::DataGridView());
 			this->IDC = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Orden = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -119,8 +121,6 @@ namespace Kat1GUI {
 			this->OrdenPlanta = (gcnew System::Windows::Forms::Label());
 			this->PlantaID = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPlantas))->BeginInit();
 			this->tabControl1->SuspendLayout();
@@ -150,6 +150,26 @@ namespace Kat1GUI {
 			this->tabPage1->Text = L"Plantas";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			this->tabPage1->Click += gcnew System::EventHandler(this, &OperarioForm::tabPage1_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(667, 433);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(111, 23);
+			this->button2->TabIndex = 13;
+			this->button2->Text = L"Finalizar";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &OperarioForm::button2_Click);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(20, 433);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(98, 23);
+			this->button1->TabIndex = 12;
+			this->button1->Text = L"Regresar";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &OperarioForm::button1_Click);
 			// 
 			// dgvPlantas
 			// 
@@ -196,9 +216,9 @@ namespace Kat1GUI {
 			// 
 			// EliminarPlanta
 			// 
-			this->EliminarPlanta->Location = System::Drawing::Point(499, 211);
+			this->EliminarPlanta->Location = System::Drawing::Point(499, 196);
 			this->EliminarPlanta->Name = L"EliminarPlanta";
-			this->EliminarPlanta->Size = System::Drawing::Size(75, 23);
+			this->EliminarPlanta->Size = System::Drawing::Size(85, 32);
 			this->EliminarPlanta->TabIndex = 10;
 			this->EliminarPlanta->Text = L"Eliminar";
 			this->EliminarPlanta->UseVisualStyleBackColor = true;
@@ -206,9 +226,9 @@ namespace Kat1GUI {
 			// 
 			// ModificaPlanta
 			// 
-			this->ModificaPlanta->Location = System::Drawing::Point(499, 125);
+			this->ModificaPlanta->Location = System::Drawing::Point(499, 122);
 			this->ModificaPlanta->Name = L"ModificaPlanta";
-			this->ModificaPlanta->Size = System::Drawing::Size(75, 23);
+			this->ModificaPlanta->Size = System::Drawing::Size(85, 31);
 			this->ModificaPlanta->TabIndex = 9;
 			this->ModificaPlanta->Text = L"Modificar";
 			this->ModificaPlanta->UseVisualStyleBackColor = true;
@@ -218,7 +238,7 @@ namespace Kat1GUI {
 			// 
 			this->AgregarPlanta->Location = System::Drawing::Point(499, 48);
 			this->AgregarPlanta->Name = L"AgregarPlanta";
-			this->AgregarPlanta->Size = System::Drawing::Size(75, 23);
+			this->AgregarPlanta->Size = System::Drawing::Size(85, 32);
 			this->AgregarPlanta->TabIndex = 8;
 			this->AgregarPlanta->Text = L"Agregar";
 			this->AgregarPlanta->UseVisualStyleBackColor = true;
@@ -298,26 +318,6 @@ namespace Kat1GUI {
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(810, 491);
 			this->tabControl1->TabIndex = 0;
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(6, 433);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 12;
-			this->button1->Text = L"Regresar";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &OperarioForm::button1_Click);
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(721, 433);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 13;
-			this->button2->Text = L"Finalizar";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &OperarioForm::button2_Click);
 			// 
 			// OperarioForm
 			// 
