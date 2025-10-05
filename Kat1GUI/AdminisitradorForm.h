@@ -677,8 +677,34 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		String^ Email = EmailUserText->Text->Trim();
 		String^ Estado = EstadoUsuariotext->Text->Trim();
 		String^ Rol = RolUsuariotext->Text->Trim();
+		//validacion de ID
+		if (UserId== 0) {
+			MessageBox::Show("Debe insertar un ID para el Usuario");
+			return;
+		}
+		//validacion de usuario
 		if (Username->Length == 0) {
 			MessageBox::Show("El nombre del Usuario no debe estar vacío");
+			return;
+		}
+		//validacion de contraseña
+		if (Password->Length == 0) {
+			MessageBox::Show("Introduzca una contraseña");
+			return;
+		}
+		//validacion de correo
+		if (Email->Length == 0) {
+			MessageBox::Show("Inserte un Email válido");
+			return;
+		}
+		//validacion estado *temporal*
+		if (Estado->Length == 0) {
+			MessageBox::Show("El estado del Usuario no debe estar vacío");
+			return;
+		}
+		//validacion rol
+		if (Rol->Length == 0) {
+			MessageBox::Show("Debe insertar un rol para el Usuario");
 			return;
 		}
 
@@ -712,8 +738,19 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 		int RobotID = Int32::Parse(IDRobottext->Text);
 		String^ RobotName = NombreRobottext->Text->Trim();
 		String^ StatusRobot = EstadoRobottext->Text->Trim();
+		//validacion ID robot
+		if (RobotID== 0) {
+			MessageBox::Show("Debe insertar un ID para el Robot");
+			return;
+		}
+		//validacion nombre robot
 		if (RobotName->Length == 0) {
 			MessageBox::Show("El nombre del Robot no debe estar vacío");
+			return;
+		}
+		//validacion Status robot *temporal*
+		if (StatusRobot->Length == 0) {
+			MessageBox::Show("El estado del Robot no puede estar vacío");
 			return;
 		}
 
@@ -744,7 +781,7 @@ private: System::Void EstadoUsuariotext_TextChanged(System::Object^ sender, Syst
 private: System::Void EliminarUsuarioBoton_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ UserID = IDUsuarioText->Text->Trim();
 	if (UserID->Equals("")) {
-		MessageBox::Show("Debe seleccionar un Usuario.");
+		MessageBox::Show("Debe seleccionar un Usuario(ID).");
 		return;
 	}
 	try {
@@ -769,20 +806,43 @@ private: System::Void EliminarUsuarioBoton_Click(System::Object^ sender, System:
 private: System::Void ModificarUsuarioBoton_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ UserID = IDUsuarioText->Text->Trim();
 	if (UserID->Equals("")) {
-		MessageBox::Show("Debe seleccionar un usuario.");
+		MessageBox::Show("Debe seleccionar un Usuario(ID).");
 		return;
 	}
 	try {
 		int UserID = Int32::Parse(IDUsuarioText->Text);
 		String^ Username = UserNameText->Text->Trim();
-		if (Username->Length == 0) {
-			MessageBox::Show("El nombre del usuario no debe estar vacío");
-			return;
-		}
 		String^ Password = PasswordText->Text->Trim();
 		String^ Email = EmailUserText->Text->Trim();
 		String^ Estado = EstadoUsuariotext->Text->Trim();
 		String^ Rol = RolUsuariotext->Text->Trim();
+
+		//validacion de usuario
+		if (Username->Length == 0) {
+			MessageBox::Show("El nombre del Usuario no debe estar vacío");
+			return;
+		}
+		//validacion de contraseña
+		if (Password->Length == 0) {
+			MessageBox::Show("Introduzca una contraseña");
+			return;
+		}
+		//validacion de correo
+		if (Email->Length == 0) {
+			MessageBox::Show("Inserte un Email válido");
+			return;
+		}
+		//validacion estado *temporal*
+		if (Estado->Length == 0) {
+			MessageBox::Show("El estado del Usuario no debe estar vacío");
+			return;
+		}
+		//validacion rol
+		if (Rol->Length == 0) {
+			MessageBox::Show("Debe insertar un rol para el Usuario");
+			return;
+		}
+
 
 		Usuario^ usuario = nullptr;
 		usuario = gcnew  Usuario(UserID, Estado, Rol, Email, Username, Password);
@@ -806,18 +866,23 @@ private: System::Void ModificarUsuarioBoton_Click(System::Object^ sender, System
 private: System::Void ModificarRobotBoton_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ RobotID = IDRobottext->Text->Trim();
 	if (RobotID->Equals("")) {
-		MessageBox::Show("Debe seleccionar un Robot.");
+		MessageBox::Show("Debe seleccionar un Robot(ID).");
 		return;
 	}
 	try {
 		int RobotID = Int32::Parse(IDRobottext->Text);
 		String^ RobotNombre = NombreRobottext->Text->Trim();
+		//Validacion nombre robot
 		if (RobotNombre->Length == 0) {
 			MessageBox::Show("El nombre del Robot no debe estar vacío");
 			return;
 		}
 		String^ EstadoRobot= EstadoRobottext->Text->Trim();
-
+		//validacion del estado *temporal*
+		if (EstadoRobot->Length == 0) {
+			MessageBox::Show("El estado del Robot no debe estar vacío");
+			return;
+		}
 		RobotAgronomo^ robot = nullptr;
 		robot = gcnew  RobotAgronomo(RobotID, RobotNombre, EstadoRobot);
 
@@ -839,7 +904,7 @@ private: System::Void ModificarRobotBoton_Click(System::Object^ sender, System::
 private: System::Void EliminarRobotBoton_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ RobotID = IDRobottext->Text->Trim();
 	if (RobotID->Equals("")) {
-		MessageBox::Show("Debe seleccionar un Robot.");
+		MessageBox::Show("Debe seleccionar un Robot(ID).");
 		return;
 	}
 	try {
