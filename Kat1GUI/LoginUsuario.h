@@ -5,6 +5,7 @@
 #pragma once
 #include "AdminisitradorForm.h"
 #include "OperarioForm.h"
+#include "RegistroForm.h"
 namespace Kat1GUI {
 
 	using namespace System;
@@ -184,6 +185,7 @@ namespace Kat1GUI {
 			this->linkLabel2->TabIndex = 7;
 			this->linkLabel2->TabStop = true;
 			this->linkLabel2->Text = L"Registrarme";
+			this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &LoginUsuario::linkLabel2_LinkClicked);
 			// 
 			// pictureBox2
 			// 
@@ -264,7 +266,7 @@ namespace Kat1GUI {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { //Acá está el botón de ingreso
 
 		//Validando los datos ingresados
-		if (UsuarioCuadro->Text == "admin" && ContraseñaCuadro->Text == "1234") {
+		if (UsuarioCuadro->Text == "admin" && ContraseñaCuadro->Text == "1234") { //Para el admin
 
 			//Se pasa a la siguiente ventana
 			AdminisitradorForm^ Adminisitrador_Form = gcnew AdminisitradorForm();
@@ -273,7 +275,7 @@ namespace Kat1GUI {
 			this->Hide();
 
 		}
-		else if (UsuarioCuadro->Text == "user" && ContraseñaCuadro->Text == "5678") {
+		else if (UsuarioCuadro->Text == "user" && ContraseñaCuadro->Text == "5678") { //Para el usuario
 			//Se pasa a la siguiente ventana
 			OperarioForm^ Operario_Form = gcnew OperarioForm();
 			Operario_Form->Owner = this;
@@ -282,9 +284,33 @@ namespace Kat1GUI {
 
 		}
 		else {
-			// Credenciales incorrectas o vacías		
-			MessageBox::Show("Usuario o contraseña incorrectos");
+			//Lee el registro y verifica si hay usuario nuevo
+			System::IO::StreamReader^ archivo = gcnew System::IO::StreamReader("usuarios.txt");
+			String^ linea = archivo->ReadLine();
+			bool user_disp = false;
 
+			while (linea != nullptr) {
+				array<String^>^ datos = linea->Split(',');
+
+				if (UsuarioCuadro->Text == datos[0] && ContraseñaCuadro->Text == datos[1]) {
+					user_disp = true;
+				}
+
+				linea = archivo->ReadLine();
+			}
+			archivo->Close();
+
+			if (user_disp == true) { //Para el usuario nuevo
+				//Se pasa a la siguiente ventana
+				OperarioForm^ Operario_Form = gcnew OperarioForm();
+				Operario_Form->Owner = this;
+				Operario_Form->Show();
+				this->Hide();
+			}
+			else {
+				// Credenciales incorrectas o vacías		
+				MessageBox::Show("Usuario o contraseña incorrectos");
+			}
 		}
 	}
 
@@ -295,6 +321,13 @@ namespace Kat1GUI {
 	private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	}
+	private: System::Void linkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	
+		RegistroForm^ registro_form = gcnew RegistroForm();
+		registro_form->Owner = this;
+		registro_form->ShowDialog(); // Usa ShowDialog para que sea modal
+		// Cuando el usuario cierre el Registro, volverá aquí automáticamente
 	}
 	private: System::Void frm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
