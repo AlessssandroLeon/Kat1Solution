@@ -15,6 +15,7 @@ namespace Kat1GUI {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+
 	/// <summary>
 	/// Resumen de LoginUsuario
 	/// </summary>
@@ -284,31 +285,36 @@ namespace Kat1GUI {
 
 		}
 		else {
-			//Lee el registro y verifica si hay usuario nuevo
-			System::IO::StreamReader^ archivo = gcnew System::IO::StreamReader("usuarios.txt");
-			String^ linea = archivo->ReadLine();
+			//Buscar en la base de datos de usuarios registrados
+			List<Usuario^>^ usuarios = Controller::ObtenerUsuario();
 			bool user_disp = false;
+			String^ rolUsuario = "";
 
-			while (linea != nullptr) {
-				array<String^>^ datos = linea->Split(',');
-
-				if (UsuarioCuadro->Text == datos[0] && ContraseñaCuadro->Text == datos[1]) {
+			for (int i = 0; i < usuarios->Count; i++) {
+				if (UsuarioCuadro->Text == usuarios[i]->Username && ContraseñaCuadro->Text == usuarios[i]->Password) {
 					user_disp = true;
+					rolUsuario = usuarios[i]->UserRole;
+					break;
 				}
-
-				linea = archivo->ReadLine();
 			}
-			archivo->Close();
 
-			if (user_disp == true) { //Para el usuario nuevo
-				//Se pasa a la siguiente ventana
-				OperarioForm^ Operario_Form = gcnew OperarioForm();
-				Operario_Form->Owner = this;
-				Operario_Form->Show();
-				this->Hide();
+			if (user_disp == true) {
+				//Redirigir según el rol
+				if (rolUsuario == "Administrador") {
+					AdminisitradorForm^ Adminisitrador_Form = gcnew AdminisitradorForm();
+					Adminisitrador_Form->Owner = this;
+					Adminisitrador_Form->Show();
+					this->Hide();
+				}
+				else {
+					OperarioForm^ Operario_Form = gcnew OperarioForm();
+					Operario_Form->Owner = this;
+					Operario_Form->Show();
+					this->Hide();
+				}
 			}
 			else {
-				// Credenciales incorrectas o vacías		
+				// Credenciales incorrectas o vacías        
 				MessageBox::Show("Usuario o contraseña incorrectos");
 			}
 		}

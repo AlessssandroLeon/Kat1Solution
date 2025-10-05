@@ -1,5 +1,6 @@
 #pragma once
 
+
 namespace Kat1GUI {
 
 	using namespace System;
@@ -8,6 +9,9 @@ namespace Kat1GUI {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Collections::Generic;
+	using namespace Kat1MODEL;
+	using namespace Kat1CONTROLLER;
 
 	/// <summary>
 	/// Resumen de RegistroForm
@@ -174,7 +178,7 @@ namespace Kat1GUI {
 		Application::Exit();
 	}
 	
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) { //botón registrar
 			
 		// Validar que los campos no estén vacíos
 		if (textBox1->Text == "" || textBox2->Text == "") {
@@ -182,21 +186,26 @@ namespace Kat1GUI {
 		}
 		else{
 			// Guardar en archivo
-			System::IO::StreamWriter^ archivo = gcnew System::IO::StreamWriter("usuarios.txt", true);
-			archivo->WriteLine(textBox1->Text + "," + textBox2->Text);
-			archivo->Close();
+			List<Usuario^>^ usuarios = Controller::ObtenerUsuario();
+			int nuevoID = usuarios->Count + 1;
 
-			MessageBox::Show("Usuario registrado exitosamente");
+			Usuario^ nuevoUsuario = gcnew Usuario(nuevoID, "Activo", "Operador", "", textBox1->Text, textBox2->Text);
 
-			//cierra el registro y regresa a la principal (misma funcion de regresar)
-			if (this->Owner != nullptr) {
-				this->Owner->Show();
+			if (Controller::AgregarUsuario(nuevoUsuario) == 1) {
+				MessageBox::Show("Usuario registrado exitosamente");
+				//cierra el registro y regresa a la principal (misma funcion de regresar)
+				if (this->Owner != nullptr) {
+					this->Owner->Show();
+				}
+				this->Close();
 			}
-			this->Close();
+			else {
+				MessageBox::Show("Error al registrar usuario");
+			}
 
-
+			
 		}
-
+		
 	}
 	
 };
