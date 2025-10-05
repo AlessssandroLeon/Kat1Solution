@@ -63,6 +63,7 @@ namespace Kat1GUI {
 	private: System::Windows::Forms::TabControl^ tabControl1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ labelTituloPlantas;
 
 	protected:
 
@@ -104,6 +105,7 @@ namespace Kat1GUI {
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->labelTituloPlantas = (gcnew System::Windows::Forms::Label());
 			this->dgvPlantas = (gcnew System::Windows::Forms::DataGridView());
 			this->IDC = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Orden = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -130,6 +132,7 @@ namespace Kat1GUI {
 			// 
 			this->tabPage1->Controls->Add(this->button2);
 			this->tabPage1->Controls->Add(this->button1);
+			this->tabPage1->Controls->Add(this->labelTituloPlantas);
 			this->tabPage1->Controls->Add(this->dgvPlantas);
 			this->tabPage1->Controls->Add(this->EliminarPlanta);
 			this->tabPage1->Controls->Add(this->ModificaPlanta);
@@ -142,10 +145,11 @@ namespace Kat1GUI {
 			this->tabPage1->Controls->Add(this->Temperatura);
 			this->tabPage1->Controls->Add(this->OrdenPlanta);
 			this->tabPage1->Controls->Add(this->PlantaID);
-			this->tabPage1->Location = System::Drawing::Point(4, 25);
+			this->tabPage1->Location = System::Drawing::Point(4, 22);
+			this->tabPage1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(802, 462);
+			this->tabPage1->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tabPage1->Size = System::Drawing::Size(600, 373);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Plantas";
 			this->tabPage1->UseVisualStyleBackColor = true;
@@ -153,9 +157,10 @@ namespace Kat1GUI {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(667, 433);
+			this->button2->Location = System::Drawing::Point(500, 352);
+			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(111, 23);
+			this->button2->Size = System::Drawing::Size(83, 19);
 			this->button2->TabIndex = 13;
 			this->button2->Text = L"Finalizar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -163,13 +168,25 @@ namespace Kat1GUI {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(20, 433);
+			this->button1->Location = System::Drawing::Point(15, 352);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(98, 23);
+			this->button1->Size = System::Drawing::Size(74, 19);
 			this->button1->TabIndex = 12;
 			this->button1->Text = L"Regresar";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &OperarioForm::button1_Click);
+			// 
+			// labelTituloPlantas
+			// 
+			this->labelTituloPlantas->AutoSize = true;
+			this->labelTituloPlantas->Font = (gcnew System::Drawing::Font(L"Calibri", 14, System::Drawing::FontStyle::Bold));
+			this->labelTituloPlantas->Location = System::Drawing::Point(198, 195);
+			this->labelTituloPlantas->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelTituloPlantas->Name = L"labelTituloPlantas";
+			this->labelTituloPlantas->Size = System::Drawing::Size(197, 23);
+			this->labelTituloPlantas->TabIndex = 14;
+			this->labelTituloPlantas->Text = L"PLANTAS REGISTRADAS";
 			// 
 			// dgvPlantas
 			// 
@@ -178,11 +195,12 @@ namespace Kat1GUI {
 				this->IDC, this->Orden,
 					this->TemperaturaC, this->HumedadC
 			});
-			this->dgvPlantas->Location = System::Drawing::Point(120, 271);
+			this->dgvPlantas->Location = System::Drawing::Point(90, 220);
+			this->dgvPlantas->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dgvPlantas->Name = L"dgvPlantas";
 			this->dgvPlantas->RowHeadersWidth = 51;
 			this->dgvPlantas->RowTemplate->Height = 24;
-			this->dgvPlantas->Size = System::Drawing::Size(548, 150);
+			this->dgvPlantas->Size = System::Drawing::Size(411, 122);
 			this->dgvPlantas->TabIndex = 11;
 			this->dgvPlantas->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &OperarioForm::dgvPlantas_CellContentClick);
 			// 
@@ -216,9 +234,10 @@ namespace Kat1GUI {
 			// 
 			// EliminarPlanta
 			// 
-			this->EliminarPlanta->Location = System::Drawing::Point(499, 196);
+			this->EliminarPlanta->Location = System::Drawing::Point(374, 159);
+			this->EliminarPlanta->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->EliminarPlanta->Name = L"EliminarPlanta";
-			this->EliminarPlanta->Size = System::Drawing::Size(85, 32);
+			this->EliminarPlanta->Size = System::Drawing::Size(64, 26);
 			this->EliminarPlanta->TabIndex = 10;
 			this->EliminarPlanta->Text = L"Eliminar";
 			this->EliminarPlanta->UseVisualStyleBackColor = true;
@@ -226,9 +245,10 @@ namespace Kat1GUI {
 			// 
 			// ModificaPlanta
 			// 
-			this->ModificaPlanta->Location = System::Drawing::Point(499, 122);
+			this->ModificaPlanta->Location = System::Drawing::Point(374, 99);
+			this->ModificaPlanta->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->ModificaPlanta->Name = L"ModificaPlanta";
-			this->ModificaPlanta->Size = System::Drawing::Size(85, 31);
+			this->ModificaPlanta->Size = System::Drawing::Size(64, 25);
 			this->ModificaPlanta->TabIndex = 9;
 			this->ModificaPlanta->Text = L"Modificar";
 			this->ModificaPlanta->UseVisualStyleBackColor = true;
@@ -236,9 +256,10 @@ namespace Kat1GUI {
 			// 
 			// AgregarPlanta
 			// 
-			this->AgregarPlanta->Location = System::Drawing::Point(499, 48);
+			this->AgregarPlanta->Location = System::Drawing::Point(374, 39);
+			this->AgregarPlanta->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->AgregarPlanta->Name = L"AgregarPlanta";
-			this->AgregarPlanta->Size = System::Drawing::Size(85, 32);
+			this->AgregarPlanta->Size = System::Drawing::Size(64, 26);
 			this->AgregarPlanta->TabIndex = 8;
 			this->AgregarPlanta->Text = L"Agregar";
 			this->AgregarPlanta->UseVisualStyleBackColor = true;
@@ -246,48 +267,54 @@ namespace Kat1GUI {
 			// 
 			// HumedadText
 			// 
-			this->HumedadText->Location = System::Drawing::Point(158, 228);
+			this->HumedadText->Location = System::Drawing::Point(118, 185);
+			this->HumedadText->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->HumedadText->Name = L"HumedadText";
-			this->HumedadText->Size = System::Drawing::Size(100, 22);
+			this->HumedadText->Size = System::Drawing::Size(76, 20);
 			this->HumedadText->TabIndex = 7;
 			// 
 			// TemperaturaText
 			// 
-			this->TemperaturaText->Location = System::Drawing::Point(158, 170);
+			this->TemperaturaText->Location = System::Drawing::Point(118, 138);
+			this->TemperaturaText->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->TemperaturaText->Name = L"TemperaturaText";
-			this->TemperaturaText->Size = System::Drawing::Size(100, 22);
+			this->TemperaturaText->Size = System::Drawing::Size(76, 20);
 			this->TemperaturaText->TabIndex = 6;
 			// 
 			// OrdenText
 			// 
-			this->OrdenText->Location = System::Drawing::Point(158, 110);
+			this->OrdenText->Location = System::Drawing::Point(118, 89);
+			this->OrdenText->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->OrdenText->Name = L"OrdenText";
-			this->OrdenText->Size = System::Drawing::Size(100, 22);
+			this->OrdenText->Size = System::Drawing::Size(76, 20);
 			this->OrdenText->TabIndex = 5;
 			// 
 			// IDText
 			// 
-			this->IDText->Location = System::Drawing::Point(158, 42);
+			this->IDText->Location = System::Drawing::Point(118, 34);
+			this->IDText->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->IDText->Name = L"IDText";
-			this->IDText->Size = System::Drawing::Size(100, 22);
+			this->IDText->Size = System::Drawing::Size(76, 20);
 			this->IDText->TabIndex = 4;
 			this->IDText->TextChanged += gcnew System::EventHandler(this, &OperarioForm::textBox1_TextChanged);
 			// 
 			// Humedad
 			// 
 			this->Humedad->AutoSize = true;
-			this->Humedad->Location = System::Drawing::Point(48, 234);
+			this->Humedad->Location = System::Drawing::Point(36, 190);
+			this->Humedad->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Humedad->Name = L"Humedad";
-			this->Humedad->Size = System::Drawing::Size(70, 16);
+			this->Humedad->Size = System::Drawing::Size(56, 13);
 			this->Humedad->TabIndex = 3;
 			this->Humedad->Text = L"Humedad:";
 			// 
 			// Temperatura
 			// 
 			this->Temperatura->AutoSize = true;
-			this->Temperatura->Location = System::Drawing::Point(48, 170);
+			this->Temperatura->Location = System::Drawing::Point(36, 138);
+			this->Temperatura->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Temperatura->Name = L"Temperatura";
-			this->Temperatura->Size = System::Drawing::Size(88, 16);
+			this->Temperatura->Size = System::Drawing::Size(70, 13);
 			this->Temperatura->TabIndex = 2;
 			this->Temperatura->Text = L"Temperatura:";
 			this->Temperatura->Click += gcnew System::EventHandler(this, &OperarioForm::Temperatura_Click);
@@ -295,37 +322,41 @@ namespace Kat1GUI {
 			// OrdenPlanta
 			// 
 			this->OrdenPlanta->AutoSize = true;
-			this->OrdenPlanta->Location = System::Drawing::Point(48, 113);
+			this->OrdenPlanta->Location = System::Drawing::Point(36, 92);
+			this->OrdenPlanta->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->OrdenPlanta->Name = L"OrdenPlanta";
-			this->OrdenPlanta->Size = System::Drawing::Size(47, 16);
+			this->OrdenPlanta->Size = System::Drawing::Size(39, 13);
 			this->OrdenPlanta->TabIndex = 1;
 			this->OrdenPlanta->Text = L"Orden:";
 			// 
 			// PlantaID
 			// 
 			this->PlantaID->AutoSize = true;
-			this->PlantaID->Location = System::Drawing::Point(48, 48);
+			this->PlantaID->Location = System::Drawing::Point(36, 39);
+			this->PlantaID->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->PlantaID->Name = L"PlantaID";
-			this->PlantaID->Size = System::Drawing::Size(23, 16);
+			this->PlantaID->Size = System::Drawing::Size(21, 13);
 			this->PlantaID->TabIndex = 0;
 			this->PlantaID->Text = L"ID:";
 			// 
 			// tabControl1
 			// 
 			this->tabControl1->Controls->Add(this->tabPage1);
-			this->tabControl1->Location = System::Drawing::Point(25, 12);
+			this->tabControl1->Location = System::Drawing::Point(19, 10);
+			this->tabControl1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(810, 491);
+			this->tabControl1->Size = System::Drawing::Size(608, 399);
 			this->tabControl1->TabIndex = 0;
 			// 
 			// OperarioForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(857, 515);
+			this->ClientSize = System::Drawing::Size(643, 418);
 			this->Controls->Add(this->tabControl1);
 			this->IsMdiContainer = true;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"OperarioForm";
 			this->Text = L"OperarioForm";
 			this->Load += gcnew System::EventHandler(this, &OperarioForm::OperarioForm_Load);
