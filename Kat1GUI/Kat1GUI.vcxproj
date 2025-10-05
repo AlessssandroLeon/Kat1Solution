@@ -129,11 +129,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdminisitradorForm.cpp" />
+    <ClCompile Include="LoginUsuario.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OperarioForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdminisitradorForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="LoginUsuario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="OperarioForm.h">
@@ -143,6 +147,10 @@
   <ItemGroup>
     <EmbeddedResource Include="AdminisitradorForm.resx">
       <DependentUpon>AdminisitradorForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginUsuario.resx">
+      <DependentUpon>LoginUsuario.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OperarioForm.resx">
       <DependentUpon>OperarioForm.h</DependentUpon>

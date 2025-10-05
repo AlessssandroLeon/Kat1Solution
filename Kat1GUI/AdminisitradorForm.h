@@ -104,6 +104,10 @@ namespace Kat1GUI {
 	private: System::Windows::Forms::TextBox^ EstadoUsuariotext;
 	private: System::Windows::Forms::TextBox^ RolUsuariotext;
 	private: System::Windows::Forms::TextBox^ EstadoRobottext;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button3;
 
 
 
@@ -147,6 +151,8 @@ namespace Kat1GUI {
 			this->Status = (gcnew System::Windows::Forms::Label());
 			this->UserID = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->EstadoRobottext = (gcnew System::Windows::Forms::TextBox());
 			this->dgvRobots = (gcnew System::Windows::Forms::DataGridView());
 			this->IDC = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -160,6 +166,8 @@ namespace Kat1GUI {
 			this->EstadoN = (gcnew System::Windows::Forms::Label());
 			this->RobotName = (gcnew System::Windows::Forms::Label());
 			this->RobotID = (gcnew System::Windows::Forms::Label());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvUsuarios))->BeginInit();
@@ -179,6 +187,8 @@ namespace Kat1GUI {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->button4);
+			this->tabPage1->Controls->Add(this->button3);
 			this->tabPage1->Controls->Add(this->EstadoUsuariotext);
 			this->tabPage1->Controls->Add(this->RolUsuariotext);
 			this->tabPage1->Controls->Add(this->dgvUsuarios);
@@ -226,7 +236,7 @@ namespace Kat1GUI {
 				this->ID, this->RolC,
 					this->UsernameC, this->PasswordC, this->EmailC, this->EstadoC
 			});
-			this->dgvUsuarios->Location = System::Drawing::Point(96, 272);
+			this->dgvUsuarios->Location = System::Drawing::Point(115, 248);
 			this->dgvUsuarios->Name = L"dgvUsuarios";
 			this->dgvUsuarios->RowHeadersWidth = 51;
 			this->dgvUsuarios->RowTemplate->Height = 24;
@@ -393,6 +403,8 @@ namespace Kat1GUI {
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->Controls->Add(this->button2);
+			this->tabPage2->Controls->Add(this->button1);
 			this->tabPage2->Controls->Add(this->EstadoRobottext);
 			this->tabPage2->Controls->Add(this->dgvRobots);
 			this->tabPage2->Controls->Add(this->EliminarRobotBoton);
@@ -412,6 +424,26 @@ namespace Kat1GUI {
 			this->tabPage2->UseVisualStyleBackColor = true;
 			this->tabPage2->Click += gcnew System::EventHandler(this, &AdminisitradorForm::tabPage2_Click);
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(921, 435);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(86, 23);
+			this->button2->TabIndex = 12;
+			this->button2->Text = L"Finalizar";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &AdminisitradorForm::button2_Click);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(6, 435);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(86, 23);
+			this->button1->TabIndex = 11;
+			this->button1->Text = L"Regresar";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &AdminisitradorForm::button1_Click_2);
+			// 
 			// EstadoRobottext
 			// 
 			this->EstadoRobottext->Location = System::Drawing::Point(204, 198);
@@ -426,7 +458,7 @@ namespace Kat1GUI {
 				this->IDC, this->NombreRobot,
 					this->Estado
 			});
-			this->dgvRobots->Location = System::Drawing::Point(280, 314);
+			this->dgvRobots->Location = System::Drawing::Point(274, 250);
 			this->dgvRobots->Name = L"dgvRobots";
 			this->dgvRobots->RowHeadersWidth = 51;
 			this->dgvRobots->RowTemplate->Height = 24;
@@ -527,11 +559,31 @@ namespace Kat1GUI {
 			this->RobotID->Text = L"ID:";
 			this->RobotID->Click += gcnew System::EventHandler(this, &AdminisitradorForm::label1_Click_2);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(6, 469);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(86, 23);
+			this->button3->TabIndex = 20;
+			this->button3->Text = L"Regresar";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &AdminisitradorForm::button3_Click);
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(921, 469);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(86, 23);
+			this->button4->TabIndex = 21;
+			this->button4->Text = L"Finalizar";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &AdminisitradorForm::button4_Click);
+			// 
 			// AdminisitradorForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1036, 581);
+			this->ClientSize = System::Drawing::Size(1036, 541);
 			this->Controls->Add(this->tabControl1);
 			this->IsMdiContainer = true;
 			this->Name = L"AdminisitradorForm";
@@ -789,5 +841,24 @@ private: System::Void EliminarRobotBoton_Click(System::Object^ sender, System::E
 			   }
 		   }
 	   }
+private: System::Void button1_Click_2(System::Object^ sender, System::EventArgs^ e) {
+	if (this->Owner != nullptr) {
+		this->Owner->Show(); // Muestra el formulario LoginUsuario
+	}
+	this->Close(); // Cierra AdministradorForm
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->Owner != nullptr) {
+		this->Owner->Show(); // Muestra el formulario LoginUsuario
+	}
+	this->Close(); // Cierra AdministradorForm
+}
 };
 }

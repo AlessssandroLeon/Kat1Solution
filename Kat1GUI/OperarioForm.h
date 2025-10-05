@@ -61,6 +61,8 @@ namespace Kat1GUI {
 	private: System::Windows::Forms::Label^ OrdenPlanta;
 	private: System::Windows::Forms::Label^ PlantaID;
 	private: System::Windows::Forms::TabControl^ tabControl1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button1;
 
 	protected:
 
@@ -117,6 +119,8 @@ namespace Kat1GUI {
 			this->OrdenPlanta = (gcnew System::Windows::Forms::Label());
 			this->PlantaID = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPlantas))->BeginInit();
 			this->tabControl1->SuspendLayout();
@@ -124,6 +128,8 @@ namespace Kat1GUI {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->button2);
+			this->tabPage1->Controls->Add(this->button1);
 			this->tabPage1->Controls->Add(this->dgvPlantas);
 			this->tabPage1->Controls->Add(this->EliminarPlanta);
 			this->tabPage1->Controls->Add(this->ModificaPlanta);
@@ -152,7 +158,7 @@ namespace Kat1GUI {
 				this->IDC, this->Orden,
 					this->TemperaturaC, this->HumedadC
 			});
-			this->dgvPlantas->Location = System::Drawing::Point(142, 286);
+			this->dgvPlantas->Location = System::Drawing::Point(120, 271);
 			this->dgvPlantas->Name = L"dgvPlantas";
 			this->dgvPlantas->RowHeadersWidth = 51;
 			this->dgvPlantas->RowTemplate->Height = 24;
@@ -293,6 +299,26 @@ namespace Kat1GUI {
 			this->tabControl1->Size = System::Drawing::Size(810, 491);
 			this->tabControl1->TabIndex = 0;
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(6, 433);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 12;
+			this->button1->Text = L"Regresar";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &OperarioForm::button1_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(721, 433);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->TabIndex = 13;
+			this->button2->Text = L"Finalizar";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &OperarioForm::button2_Click);
+			// 
 			// OperarioForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -417,6 +443,15 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void dgvPlantas_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 private: System::Void OperarioForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->Owner != nullptr) {
+		this->Owner->Show(); // Muestra el formulario LoginUsuario
+	}
+	this->Close(); // Cierra OperarioForm
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
 }
 };
 }
