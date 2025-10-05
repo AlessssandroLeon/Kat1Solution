@@ -1,5 +1,5 @@
 #pragma once
-
+//hola
 namespace Kat1GUI {
 
 	using namespace System;
