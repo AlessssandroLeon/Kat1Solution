@@ -685,7 +685,26 @@ private: System::Void AgregarPlanta_Click(System::Object^ sender, System::EventA
 		String^ Humedad = HumedadText->Text->Trim();
 		String^ Temperatura = TemperaturaText->Text->Trim();
 		String^ Orden = OrdenText->Text->Trim();
-
+		//validacion id planta
+		if (PlantaID==0) {
+			MessageBox::Show("Debe insertar un ID para la planta.");
+			return;
+		}
+		//validacion humedad*temporal*
+		if (Humedad->Equals("")) {
+			MessageBox::Show("Debe insertar un valor para la Humedad.");
+			return;
+		}
+		//validacion temperatura *temporal*
+		if (Temperatura->Equals("")) {
+			MessageBox::Show("Debe insertar un valor de Temperatura.");
+			return;
+		}
+		//validacion orden
+		if (Orden->Equals("")) {
+			MessageBox::Show("Debe insertar un Orden para la planta.");
+			return;
+		}
 		Planta^ planta = nullptr;
 	
 		planta = gcnew  Planta(PlantaID, Orden, Temperatura, Humedad);
@@ -725,7 +744,7 @@ private: System::Void AgregarPlanta_Click(System::Object^ sender, System::EventA
 private: System::Void ModificaPlanta_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ PlantaID = IDText->Text->Trim();
 	if (PlantaID->Equals("")) {
-		MessageBox::Show("Debe seleccionar una planta.");
+		MessageBox::Show("Debe seleccionar una planta(ID).");
 		return;
 	}
 	try {
@@ -733,6 +752,22 @@ private: System::Void ModificaPlanta_Click(System::Object^ sender, System::Event
 		String^ Humedad = HumedadText->Text->Trim();
 		String^ Temperatura = TemperaturaText->Text->Trim();
 		String^ Orden = OrdenText->Text->Trim();
+
+		//validacion humedad*temporal*
+		if (Humedad->Equals("")) {
+			MessageBox::Show("Debe insertar un valor para la Humedad.");
+			return;
+		}
+		//validacion temperatura *temporal*
+		if (Temperatura->Equals("")) {
+			MessageBox::Show("Debe insertar un valor de Temperatura.");
+			return;
+		}
+		//validacion orden
+		if (Orden->Equals("")) {
+			MessageBox::Show("Debe insertar un Orden para la planta.");
+			return;
+		}
 
 		Planta^ planta = nullptr;
 		planta = gcnew  Planta(PlantaID, Orden, Temperatura, Humedad);
@@ -755,7 +790,7 @@ private: System::Void ModificaPlanta_Click(System::Object^ sender, System::Event
 private: System::Void EliminarPlanta_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ PlantaID = IDText->Text->Trim();
 	if (PlantaID->Equals("")) {
-		MessageBox::Show("Debe seleccionar una planta.");
+		MessageBox::Show("Debe seleccionar una planta(ID).");
 		return;
 	}
 	try {
