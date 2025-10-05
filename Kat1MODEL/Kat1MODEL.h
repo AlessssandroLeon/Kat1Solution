@@ -8,7 +8,27 @@ namespace Kat1MODEL {
     ref class RobotAgronomo;
     ref class Planta;
     ref class Sensor;
-    //el neto estuvo aqui
+    ref class Ensayo;
+    // Ensayos *fecha y hora de manera temporal*
+    public ref class Ensayo {
+    public:
+        int EnsayoID;
+        int PlantaID;
+        String^ Fecha;
+        String^ Hora;
+        String^ Observaciones;
+        String^ Condiciones;
+        Ensayo() {}
+        Ensayo(int EnsayoID, int PlantaID, String^ Fecha, String^ Hora, String^ Observaciones, String^ Condiciones) {
+            this->EnsayoID = EnsayoID;
+            this->PlantaID = PlantaID;
+            this->Fecha = Fecha;
+            this->Hora = Hora;
+            this->Observaciones = Observaciones;
+            this->Condiciones = Condiciones;
+        }
+    };
+
     //Usuario y subclases
     public ref class Usuario {
     public:
