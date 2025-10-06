@@ -22,6 +22,8 @@ namespace Kat1GUI {
 		RegistroForm(void)
 		{
 			InitializeComponent();
+			//Para que aparezcan * en la contraseña
+			this->textBox2->PasswordChar = '*';
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -46,6 +48,8 @@ namespace Kat1GUI {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::TextBox^ textBox3;
 	protected:
 
 	private:
@@ -69,6 +73,8 @@ namespace Kat1GUI {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -135,7 +141,7 @@ namespace Kat1GUI {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(90, 145);
+			this->button3->Location = System::Drawing::Point(90, 179);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 7;
@@ -143,11 +149,29 @@ namespace Kat1GUI {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &RegistroForm::button3_Click);
 			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(23, 123);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(32, 13);
+			this->label4->TabIndex = 8;
+			this->label4->Text = L"Email";
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(125, 120);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(147, 20);
+			this->textBox3->TabIndex = 9;
+			// 
 			// RegistroForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
@@ -189,7 +213,7 @@ namespace Kat1GUI {
 			List<Usuario^>^ usuarios = Controller::ObtenerUsuario();
 			int nuevoID = usuarios->Count + 1;
 
-			Usuario^ nuevoUsuario = gcnew Usuario(nuevoID, "Activo", "Operador", "", textBox1->Text, textBox2->Text);
+			Usuario^ nuevoUsuario = gcnew Usuario(nuevoID, "Activo", "Operador", textBox3->Text, textBox1->Text, textBox2->Text);
 
 			if (Controller::AgregarUsuario(nuevoUsuario) == 1) {
 				MessageBox::Show("Usuario registrado exitosamente");

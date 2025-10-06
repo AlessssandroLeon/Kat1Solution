@@ -44,6 +44,10 @@ namespace Kat1CONTROLLER {
 			static List<Usuario^>^ ObtenerUsuario();
 			static int EliminarUsuario(int UserID);
 			static int ModificarUsuario(Usuario^ Usuario);
+
+			//para guardar datos
+			static void GuardarDatos();
+			static void CargarDatos();
 	};
 
 }

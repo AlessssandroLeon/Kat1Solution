@@ -14,6 +14,9 @@ namespace Kat1GUI {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Collections::Generic;
+	using namespace Kat1MODEL;
+	using namespace Kat1CONTROLLER;
 
 
 	/// <summary>
@@ -26,10 +29,14 @@ namespace Kat1GUI {
 		{
 			InitializeComponent();
 
+			Controller::CargarDatos();
+			
 			//Para que aparezcan * en la contraseña
 			this->ContraseñaCuadro->PasswordChar = '*';
 			//Configuro al botón enter para ingresar
 			this->AcceptButton = this->Ingresar;
+
+			
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -286,7 +293,7 @@ namespace Kat1GUI {
 		}
 		else {
 			//Buscar en la base de datos de usuarios registrados
-			List<Usuario^>^ usuarios = Controller::ObtenerUsuario();
+			List<Kat1MODEL::Usuario^>^ usuarios = Kat1CONTROLLER::Controller::ObtenerUsuario();
 			bool user_disp = false;
 			String^ rolUsuario = "";
 

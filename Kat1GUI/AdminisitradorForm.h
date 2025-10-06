@@ -21,6 +21,8 @@ namespace Kat1GUI {
 		AdminisitradorForm(void)
 		{
 			InitializeComponent();
+			ShowUsuario(); // Cargar usuarios al entrar a la pestaña
+			ShowRobots();   
 			//
 			//TODO: agregar código de constructor aquí
 			//

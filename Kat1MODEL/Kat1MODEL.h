@@ -41,6 +41,7 @@ namespace Kat1MODEL {
         Usuario() {}
         Usuario(int UserID, String^ Status, String^ UserRole, String^ Email, String^ Username, String^ Password) {
             this->UserID = UserID;
+            this->Status = Status;
             this->UserRole = UserRole;
             this->Email = Email;
             this->Username = Username;
