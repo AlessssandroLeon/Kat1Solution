@@ -9,6 +9,7 @@ namespace Kat1MODEL {
     ref class Planta;
     ref class Sensor;
     ref class Ensayo;
+    //ola giacomo 
     // Ensayos *fecha y hora de manera temporal*
     public ref class Ensayo {
     public:
