@@ -726,75 +726,14 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			ex->Message);
 	}
 }
-private: System::Void IDText_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
+
 private: System::Void label1_Click_2(System::Object^ sender, System::EventArgs^ e) {
 }
 
-	   //Agregar Usuario
-
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	try {
-		int UserId = Int32::Parse(IDUsuarioText->Text);
-		String^ Username = UserNameText->Text->Trim();
-		String^ Password = PasswordText->Text->Trim();
-		String^ Email = EmailUserText->Text->Trim();
-		String^ Estado = EstadoUsuariotext->Text->Trim();
-		String^ Rol = RolUsuariotext->Text->Trim();
-		//validacion de ID
-		if (UserId == 0) {
-			MessageBox::Show("Debe insertar un ID para el Usuario");
-			return;
-		}
-		//validacion de usuario
-		if (Username->Length == 0) {
-			MessageBox::Show("El nombre del Usuario no debe estar vacío");
-			return;
-		}
-		//validacion de contraseña
-		if (Password->Length == 0) {
-			MessageBox::Show("Introduzca una contraseña");
-			return;
-		}
-		//validacion de correo
-		if (Email->Length == 0) {
-			MessageBox::Show("Inserte un Email válido");
-			return;
-		}
-		//validacion estado *temporal*
-		if (Estado->Length == 0) {
-			MessageBox::Show("El estado del Usuario no debe estar vacío");
-			return;
-		}
-		//validacion rol
-		if (Rol->Length == 0) {
-			MessageBox::Show("Debe insertar un rol para el Usuario");
-			return;
-		}
-
-		Usuario^ usuario = nullptr;
-		usuario = gcnew  Usuario(UserId, Estado, Rol, Email, Username, Password);
-
-		if (Controller::AgregarUsuario(usuario) == 1) {
-			ShowUsuario();
-			MessageBox::Show("Se ha agregado el Usuario" + UserId + " - " + Username);
-		}
-		else {
-			MessageBox::Show("No se ha podido agregar el Usuario " + UserId);
-		}
-	}
-	catch (Exception^ ex) {
-		MessageBox::Show("No se ha podido agregar el usuario por el siguiente motivo:\n" +
-			ex->Message);
-	}
-}
+	
 private: System::Void IDText_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
-private: System::Void label1_Click_2(System::Object^ sender, System::EventArgs^ e) {
 }
 
 

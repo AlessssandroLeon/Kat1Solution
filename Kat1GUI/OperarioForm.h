@@ -86,8 +86,9 @@ namespace Kat1GUI {
 
 	private: System::Windows::Forms::Button^ AgregarEnsayo;
 	private: System::Windows::Forms::TextBox^ CondicionesText;
+	private: System::Windows::Forms::DataGridView^ dgvEnsayos;
 
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ IDEnsayoC;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ IDPlantaC;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ FechaC;
@@ -162,36 +163,36 @@ namespace Kat1GUI {
 			this->PlantaID = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->IDEnsayo = (gcnew System::Windows::Forms::Label());
-			this->IDPlanta = (gcnew System::Windows::Forms::Label());
-			this->Fecha = (gcnew System::Windows::Forms::Label());
-			this->ObservacionesEnsayo = (gcnew System::Windows::Forms::Label());
-			this->CondicionesReg = (gcnew System::Windows::Forms::Label());
-			this->HoraReg = (gcnew System::Windows::Forms::Label());
-			this->IDEnsayoText = (gcnew System::Windows::Forms::TextBox());
-			this->IDPlantaText = (gcnew System::Windows::Forms::TextBox());
-			this->FechaText = (gcnew System::Windows::Forms::TextBox());
-			this->HoraText = (gcnew System::Windows::Forms::TextBox());
-			this->ObservacionesText = (gcnew System::Windows::Forms::TextBox());
-			this->CondicionesText = (gcnew System::Windows::Forms::TextBox());
-			this->AgregarEnsayo = (gcnew System::Windows::Forms::Button());
-			this->ModificarEnsayo = (gcnew System::Windows::Forms::Button());
-			this->EliminarEnsayo = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Finalizar = (gcnew System::Windows::Forms::Button());
+			this->Regresar = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->dgvEnsayos = (gcnew System::Windows::Forms::DataGridView());
 			this->IDEnsayoC = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->IDPlantaC = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->FechaC = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->HoraC = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->ObservacionesC = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->CondicionesC = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->Regresar = (gcnew System::Windows::Forms::Button());
-			this->Finalizar = (gcnew System::Windows::Forms::Button());
+			this->EliminarEnsayo = (gcnew System::Windows::Forms::Button());
+			this->ModificarEnsayo = (gcnew System::Windows::Forms::Button());
+			this->AgregarEnsayo = (gcnew System::Windows::Forms::Button());
+			this->CondicionesText = (gcnew System::Windows::Forms::TextBox());
+			this->ObservacionesText = (gcnew System::Windows::Forms::TextBox());
+			this->HoraText = (gcnew System::Windows::Forms::TextBox());
+			this->FechaText = (gcnew System::Windows::Forms::TextBox());
+			this->IDPlantaText = (gcnew System::Windows::Forms::TextBox());
+			this->IDEnsayoText = (gcnew System::Windows::Forms::TextBox());
+			this->HoraReg = (gcnew System::Windows::Forms::Label());
+			this->CondicionesReg = (gcnew System::Windows::Forms::Label());
+			this->ObservacionesEnsayo = (gcnew System::Windows::Forms::Label());
+			this->Fecha = (gcnew System::Windows::Forms::Label());
+			this->IDPlanta = (gcnew System::Windows::Forms::Label());
+			this->IDEnsayo = (gcnew System::Windows::Forms::Label());
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPlantas))->BeginInit();
 			this->tabControl1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvEnsayos))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabPage1
@@ -416,7 +417,7 @@ namespace Kat1GUI {
 			this->tabPage2->Controls->Add(this->Finalizar);
 			this->tabPage2->Controls->Add(this->Regresar);
 			this->tabPage2->Controls->Add(this->label1);
-			this->tabPage2->Controls->Add(this->dataGridView1);
+			this->tabPage2->Controls->Add(this->dgvEnsayos);
 			this->tabPage2->Controls->Add(this->EliminarEnsayo);
 			this->tabPage2->Controls->Add(this->ModificarEnsayo);
 			this->tabPage2->Controls->Add(this->AgregarEnsayo);
@@ -437,149 +438,52 @@ namespace Kat1GUI {
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage2->Size = System::Drawing::Size(803, 462);
 			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"Nuevo Ensayo";
+			this->tabPage2->Text = L"Ensayos";
 			this->tabPage2->UseVisualStyleBackColor = true;
+			this->tabPage2->Click += gcnew System::EventHandler(this, &OperarioForm::tabPage2_Click);
 			// 
-			// IDEnsayo
+			// Finalizar
 			// 
-			this->IDEnsayo->AutoSize = true;
-			this->IDEnsayo->Location = System::Drawing::Point(46, 44);
-			this->IDEnsayo->Name = L"IDEnsayo";
-			this->IDEnsayo->Size = System::Drawing::Size(72, 16);
-			this->IDEnsayo->TabIndex = 0;
-			this->IDEnsayo->Text = L"ID Ensayo:";
-			this->IDEnsayo->Click += gcnew System::EventHandler(this, &OperarioForm::label1_Click);
+			this->Finalizar->Location = System::Drawing::Point(687, 425);
+			this->Finalizar->Name = L"Finalizar";
+			this->Finalizar->Size = System::Drawing::Size(99, 31);
+			this->Finalizar->TabIndex = 21;
+			this->Finalizar->Text = L"Finalizar";
+			this->Finalizar->UseVisualStyleBackColor = true;
 			// 
-			// IDPlanta
+			// Regresar
 			// 
-			this->IDPlanta->AutoSize = true;
-			this->IDPlanta->Location = System::Drawing::Point(46, 95);
-			this->IDPlanta->Name = L"IDPlanta";
-			this->IDPlanta->Size = System::Drawing::Size(64, 16);
-			this->IDPlanta->TabIndex = 1;
-			this->IDPlanta->Text = L"ID Planta:";
+			this->Regresar->Location = System::Drawing::Point(19, 425);
+			this->Regresar->Name = L"Regresar";
+			this->Regresar->Size = System::Drawing::Size(99, 31);
+			this->Regresar->TabIndex = 20;
+			this->Regresar->Text = L"Regresar";
+			this->Regresar->UseVisualStyleBackColor = true;
 			// 
-			// Fecha
+			// label1
 			// 
-			this->Fecha->AutoSize = true;
-			this->Fecha->Location = System::Drawing::Point(46, 141);
-			this->Fecha->Name = L"Fecha";
-			this->Fecha->Size = System::Drawing::Size(48, 16);
-			this->Fecha->TabIndex = 2;
-			this->Fecha->Text = L"Fecha:";
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Calibri", 14, System::Drawing::FontStyle::Bold));
+			this->label1->Location = System::Drawing::Point(287, 235);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(249, 29);
+			this->label1->TabIndex = 19;
+			this->label1->Text = L"ENSAYOS REGISTRADOS";
+			this->label1->Click += gcnew System::EventHandler(this, &OperarioForm::label1_Click_1);
 			// 
-			// ObservacionesEnsayo
+			// dgvEnsayos
 			// 
-			this->ObservacionesEnsayo->AutoSize = true;
-			this->ObservacionesEnsayo->Location = System::Drawing::Point(279, 27);
-			this->ObservacionesEnsayo->Name = L"ObservacionesEnsayo";
-			this->ObservacionesEnsayo->Size = System::Drawing::Size(102, 16);
-			this->ObservacionesEnsayo->TabIndex = 5;
-			this->ObservacionesEnsayo->Text = L"Observaciones:";
-			// 
-			// CondicionesReg
-			// 
-			this->CondicionesReg->AutoSize = true;
-			this->CondicionesReg->Location = System::Drawing::Point(279, 133);
-			this->CondicionesReg->Name = L"CondicionesReg";
-			this->CondicionesReg->Size = System::Drawing::Size(153, 16);
-			this->CondicionesReg->TabIndex = 6;
-			this->CondicionesReg->Text = L"Condiciones de Ensayo:";
-			// 
-			// HoraReg
-			// 
-			this->HoraReg->AutoSize = true;
-			this->HoraReg->Location = System::Drawing::Point(46, 194);
-			this->HoraReg->Name = L"HoraReg";
-			this->HoraReg->Size = System::Drawing::Size(40, 16);
-			this->HoraReg->TabIndex = 7;
-			this->HoraReg->Text = L"Hora:";
-			this->HoraReg->Click += gcnew System::EventHandler(this, &OperarioForm::HoraReg_Click);
-			// 
-			// IDEnsayoText
-			// 
-			this->IDEnsayoText->Location = System::Drawing::Point(124, 41);
-			this->IDEnsayoText->Name = L"IDEnsayoText";
-			this->IDEnsayoText->Size = System::Drawing::Size(100, 22);
-			this->IDEnsayoText->TabIndex = 8;
-			// 
-			// IDPlantaText
-			// 
-			this->IDPlantaText->Location = System::Drawing::Point(124, 89);
-			this->IDPlantaText->Name = L"IDPlantaText";
-			this->IDPlantaText->Size = System::Drawing::Size(100, 22);
-			this->IDPlantaText->TabIndex = 9;
-			// 
-			// FechaText
-			// 
-			this->FechaText->Location = System::Drawing::Point(124, 141);
-			this->FechaText->Name = L"FechaText";
-			this->FechaText->Size = System::Drawing::Size(100, 22);
-			this->FechaText->TabIndex = 10;
-			// 
-			// HoraText
-			// 
-			this->HoraText->Location = System::Drawing::Point(124, 194);
-			this->HoraText->Name = L"HoraText";
-			this->HoraText->Size = System::Drawing::Size(100, 22);
-			this->HoraText->TabIndex = 11;
-			// 
-			// ObservacionesText
-			// 
-			this->ObservacionesText->Location = System::Drawing::Point(282, 46);
-			this->ObservacionesText->Multiline = true;
-			this->ObservacionesText->Name = L"ObservacionesText";
-			this->ObservacionesText->Size = System::Drawing::Size(342, 65);
-			this->ObservacionesText->TabIndex = 12;
-			// 
-			// CondicionesText
-			// 
-			this->CondicionesText->Location = System::Drawing::Point(282, 157);
-			this->CondicionesText->Multiline = true;
-			this->CondicionesText->Name = L"CondicionesText";
-			this->CondicionesText->Size = System::Drawing::Size(342, 59);
-			this->CondicionesText->TabIndex = 14;
-			// 
-			// AgregarEnsayo
-			// 
-			this->AgregarEnsayo->Location = System::Drawing::Point(677, 40);
-			this->AgregarEnsayo->Name = L"AgregarEnsayo";
-			this->AgregarEnsayo->Size = System::Drawing::Size(75, 31);
-			this->AgregarEnsayo->TabIndex = 15;
-			this->AgregarEnsayo->Text = L"Agregar";
-			this->AgregarEnsayo->UseVisualStyleBackColor = true;
-			// 
-			// ModificarEnsayo
-			// 
-			this->ModificarEnsayo->Location = System::Drawing::Point(677, 115);
-			this->ModificarEnsayo->Name = L"ModificarEnsayo";
-			this->ModificarEnsayo->Size = System::Drawing::Size(75, 30);
-			this->ModificarEnsayo->TabIndex = 16;
-			this->ModificarEnsayo->Text = L"Modificar";
-			this->ModificarEnsayo->UseVisualStyleBackColor = true;
-			// 
-			// EliminarEnsayo
-			// 
-			this->EliminarEnsayo->Location = System::Drawing::Point(677, 190);
-			this->EliminarEnsayo->Name = L"EliminarEnsayo";
-			this->EliminarEnsayo->Size = System::Drawing::Size(75, 30);
-			this->EliminarEnsayo->TabIndex = 17;
-			this->EliminarEnsayo->Text = L"Eliminar";
-			this->EliminarEnsayo->UseVisualStyleBackColor = true;
-			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
+			this->dgvEnsayos->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgvEnsayos->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
 				this->IDEnsayoC,
 					this->IDPlantaC, this->FechaC, this->HoraC, this->ObservacionesC, this->CondicionesC
 			});
-			this->dataGridView1->Location = System::Drawing::Point(15, 266);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(771, 150);
-			this->dataGridView1->TabIndex = 18;
+			this->dgvEnsayos->Location = System::Drawing::Point(15, 266);
+			this->dgvEnsayos->Name = L"dgvEnsayos";
+			this->dgvEnsayos->RowHeadersWidth = 51;
+			this->dgvEnsayos->RowTemplate->Height = 24;
+			this->dgvEnsayos->Size = System::Drawing::Size(771, 150);
+			this->dgvEnsayos->TabIndex = 18;
 			// 
 			// IDEnsayoC
 			// 
@@ -623,34 +527,135 @@ namespace Kat1GUI {
 			this->CondicionesC->Name = L"CondicionesC";
 			this->CondicionesC->Width = 125;
 			// 
-			// label1
+			// EliminarEnsayo
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Calibri", 14, System::Drawing::FontStyle::Bold));
-			this->label1->Location = System::Drawing::Point(287, 235);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(249, 29);
-			this->label1->TabIndex = 19;
-			this->label1->Text = L"ENSAYOS REGISTRADOS";
-			this->label1->Click += gcnew System::EventHandler(this, &OperarioForm::label1_Click_1);
+			this->EliminarEnsayo->Location = System::Drawing::Point(677, 190);
+			this->EliminarEnsayo->Name = L"EliminarEnsayo";
+			this->EliminarEnsayo->Size = System::Drawing::Size(75, 30);
+			this->EliminarEnsayo->TabIndex = 17;
+			this->EliminarEnsayo->Text = L"Eliminar";
+			this->EliminarEnsayo->UseVisualStyleBackColor = true;
+			this->EliminarEnsayo->Click += gcnew System::EventHandler(this, &OperarioForm::EliminarEnsayo_Click);
 			// 
-			// Regresar
+			// ModificarEnsayo
 			// 
-			this->Regresar->Location = System::Drawing::Point(19, 425);
-			this->Regresar->Name = L"Regresar";
-			this->Regresar->Size = System::Drawing::Size(99, 31);
-			this->Regresar->TabIndex = 20;
-			this->Regresar->Text = L"Regresar";
-			this->Regresar->UseVisualStyleBackColor = true;
+			this->ModificarEnsayo->Location = System::Drawing::Point(677, 115);
+			this->ModificarEnsayo->Name = L"ModificarEnsayo";
+			this->ModificarEnsayo->Size = System::Drawing::Size(75, 30);
+			this->ModificarEnsayo->TabIndex = 16;
+			this->ModificarEnsayo->Text = L"Modificar";
+			this->ModificarEnsayo->UseVisualStyleBackColor = true;
+			this->ModificarEnsayo->Click += gcnew System::EventHandler(this, &OperarioForm::ModificarEnsayo_Click);
 			// 
-			// Finalizar
+			// AgregarEnsayo
 			// 
-			this->Finalizar->Location = System::Drawing::Point(687, 425);
-			this->Finalizar->Name = L"Finalizar";
-			this->Finalizar->Size = System::Drawing::Size(99, 31);
-			this->Finalizar->TabIndex = 21;
-			this->Finalizar->Text = L"Finalizar";
-			this->Finalizar->UseVisualStyleBackColor = true;
+			this->AgregarEnsayo->Location = System::Drawing::Point(677, 40);
+			this->AgregarEnsayo->Name = L"AgregarEnsayo";
+			this->AgregarEnsayo->Size = System::Drawing::Size(75, 31);
+			this->AgregarEnsayo->TabIndex = 15;
+			this->AgregarEnsayo->Text = L"Agregar";
+			this->AgregarEnsayo->UseVisualStyleBackColor = true;
+			this->AgregarEnsayo->Click += gcnew System::EventHandler(this, &OperarioForm::AgregarEnsayo_Click);
+			// 
+			// CondicionesText
+			// 
+			this->CondicionesText->Location = System::Drawing::Point(282, 157);
+			this->CondicionesText->Multiline = true;
+			this->CondicionesText->Name = L"CondicionesText";
+			this->CondicionesText->Size = System::Drawing::Size(342, 59);
+			this->CondicionesText->TabIndex = 14;
+			// 
+			// ObservacionesText
+			// 
+			this->ObservacionesText->Location = System::Drawing::Point(282, 46);
+			this->ObservacionesText->Multiline = true;
+			this->ObservacionesText->Name = L"ObservacionesText";
+			this->ObservacionesText->Size = System::Drawing::Size(342, 65);
+			this->ObservacionesText->TabIndex = 12;
+			// 
+			// HoraText
+			// 
+			this->HoraText->Location = System::Drawing::Point(124, 194);
+			this->HoraText->Name = L"HoraText";
+			this->HoraText->Size = System::Drawing::Size(100, 22);
+			this->HoraText->TabIndex = 11;
+			// 
+			// FechaText
+			// 
+			this->FechaText->Location = System::Drawing::Point(124, 141);
+			this->FechaText->Name = L"FechaText";
+			this->FechaText->Size = System::Drawing::Size(100, 22);
+			this->FechaText->TabIndex = 10;
+			// 
+			// IDPlantaText
+			// 
+			this->IDPlantaText->Location = System::Drawing::Point(124, 89);
+			this->IDPlantaText->Name = L"IDPlantaText";
+			this->IDPlantaText->Size = System::Drawing::Size(100, 22);
+			this->IDPlantaText->TabIndex = 9;
+			// 
+			// IDEnsayoText
+			// 
+			this->IDEnsayoText->Location = System::Drawing::Point(124, 41);
+			this->IDEnsayoText->Name = L"IDEnsayoText";
+			this->IDEnsayoText->Size = System::Drawing::Size(100, 22);
+			this->IDEnsayoText->TabIndex = 8;
+			// 
+			// HoraReg
+			// 
+			this->HoraReg->AutoSize = true;
+			this->HoraReg->Location = System::Drawing::Point(46, 194);
+			this->HoraReg->Name = L"HoraReg";
+			this->HoraReg->Size = System::Drawing::Size(40, 16);
+			this->HoraReg->TabIndex = 7;
+			this->HoraReg->Text = L"Hora:";
+			this->HoraReg->Click += gcnew System::EventHandler(this, &OperarioForm::HoraReg_Click);
+			// 
+			// CondicionesReg
+			// 
+			this->CondicionesReg->AutoSize = true;
+			this->CondicionesReg->Location = System::Drawing::Point(279, 133);
+			this->CondicionesReg->Name = L"CondicionesReg";
+			this->CondicionesReg->Size = System::Drawing::Size(153, 16);
+			this->CondicionesReg->TabIndex = 6;
+			this->CondicionesReg->Text = L"Condiciones de Ensayo:";
+			// 
+			// ObservacionesEnsayo
+			// 
+			this->ObservacionesEnsayo->AutoSize = true;
+			this->ObservacionesEnsayo->Location = System::Drawing::Point(279, 27);
+			this->ObservacionesEnsayo->Name = L"ObservacionesEnsayo";
+			this->ObservacionesEnsayo->Size = System::Drawing::Size(102, 16);
+			this->ObservacionesEnsayo->TabIndex = 5;
+			this->ObservacionesEnsayo->Text = L"Observaciones:";
+			// 
+			// Fecha
+			// 
+			this->Fecha->AutoSize = true;
+			this->Fecha->Location = System::Drawing::Point(46, 141);
+			this->Fecha->Name = L"Fecha";
+			this->Fecha->Size = System::Drawing::Size(48, 16);
+			this->Fecha->TabIndex = 2;
+			this->Fecha->Text = L"Fecha:";
+			// 
+			// IDPlanta
+			// 
+			this->IDPlanta->AutoSize = true;
+			this->IDPlanta->Location = System::Drawing::Point(46, 95);
+			this->IDPlanta->Name = L"IDPlanta";
+			this->IDPlanta->Size = System::Drawing::Size(64, 16);
+			this->IDPlanta->TabIndex = 1;
+			this->IDPlanta->Text = L"ID Planta:";
+			// 
+			// IDEnsayo
+			// 
+			this->IDEnsayo->AutoSize = true;
+			this->IDEnsayo->Location = System::Drawing::Point(46, 44);
+			this->IDEnsayo->Name = L"IDEnsayo";
+			this->IDEnsayo->Size = System::Drawing::Size(72, 16);
+			this->IDEnsayo->TabIndex = 0;
+			this->IDEnsayo->Text = L"ID Ensayo:";
+			this->IDEnsayo->Click += gcnew System::EventHandler(this, &OperarioForm::label1_Click);
 			// 
 			// OperarioForm
 			// 
@@ -669,7 +674,7 @@ namespace Kat1GUI {
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvEnsayos))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -830,6 +835,152 @@ private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void HoraReg_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void tabPage2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+	 
+	   //mostrar ensayos en la tabla
+		   void ShowEnsayo() {
+		   List<Ensayo^>^ ensayos = Controller::ObtenerEnsayo();
+		   if (ensayos != nullptr) {
+			   dgvEnsayos->Rows->Clear();
+			   for (int i = 0; i < ensayos->Count; i++) {
+				   dgvEnsayos->Rows->Add(gcnew array<String^>{
+					   "" + ensayos[i]->EnsayoID,
+						   "" + ensayos[i]->Fecha,
+						   ensayos[i]->Hora,
+						   "" + ensayos[i]->Observaciones,
+						   ensayos[i]->Condiciones
+				   }
+				   );
+			   }
+		   }
+	   }
+
+
+
+	   //agregar ensayo
+private: System::Void AgregarEnsayo_Click(System::Object^ sender, System::EventArgs^ e) {
+	try {
+		int EnsayoID = Int32::Parse(IDEnsayoText->Text);
+		int PlantaID = Int32::Parse(IDPlantaText->Text);
+		String^ Fecha = FechaText->Text->Trim();
+		String^ Hora = HoraText->Text->Trim();
+		String^ Observaciones = ObservacionesText->Text->Trim();
+		String^ Condiciones = CondicionesText->Text->Trim();
+
+		//validacion ensayoID
+		if (EnsayoID == 0) {
+			MessageBox::Show("Debe insertar un ID para el ensayo.");
+			return;
+		}
+		//validacion plantaID
+		if (PlantaID == 0) {
+			MessageBox::Show("Debe insertar un ID para la planta.");
+			return;
+		}
+		//validacion fecha
+		if (Fecha->Equals("")) {
+			MessageBox::Show("Debe insertar una fecha válida.");
+			return;
+		}
+		//validacion Hora
+		if (Hora->Equals("")) {
+			MessageBox::Show("Debe insertar una hora válida.");
+			return;
+		}
+
+		Ensayo^ ensayo = nullptr;
+
+		ensayo= gcnew  Ensayo(EnsayoID, PlantaID, Fecha, Hora, Observaciones, Condiciones);
+
+		if (Controller::AgregarEnsayo(ensayo) == 1) {
+			ShowEnsayo();
+			MessageBox::Show("Se ha agregado el ensayo " + EnsayoID);
+		}
+		else {
+			MessageBox::Show("No se ha podido agregar el ensayo " + EnsayoID);
+		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("No se ha podido agregar el ensayo por el siguiente motivo:\n" +
+			ex->Message);
+	}
+
+}
+
+	   //modificar ensayo
+private: System::Void ModificarEnsayo_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ EnsayoID = IDEnsayoText->Text->Trim();
+	if (EnsayoID->Equals("")) {
+		MessageBox::Show("Debe seleccionar un ensayo (ID).");
+		return;
+	}
+	try {
+		int EnsayoID = Int32::Parse(IDEnsayoText->Text);
+		int PlantaID = Int32::Parse(IDPlantaText->Text);
+		String^ Fecha = FechaText->Text->Trim();
+		String^ Hora = HoraText->Text->Trim();
+		String^ Observaciones = ObservacionesText->Text->Trim();
+		String^ Condiciones = CondicionesText->Text->Trim();
+
+		//validacion plantaID
+		if (PlantaID==0) {
+			MessageBox::Show("Debe insertar una planta (ID).");
+			return;
+		}
+		//validacion fecha
+		if (Fecha->Equals("")) {
+			MessageBox::Show("Debe insertar una fecha válida.");
+			return;
+		}
+		//validacion Hora
+		if (Hora->Equals("")) {
+			MessageBox::Show("Debe insertar una hora válida.");
+			return;
+		}
+
+		Ensayo^ ensayo = nullptr;
+		ensayo = gcnew  Ensayo(EnsayoID,PlantaID,Fecha,Hora,Observaciones, Condiciones);
+
+		if (Controller::ModificarEnsayo(ensayo) == 1) {
+			ShowEnsayo();
+			MessageBox::Show("Se ha modificado el ensayo " + EnsayoID);
+		}
+		else {
+			MessageBox::Show("No se ha podido modificar el ensayo " + EnsayoID);
+		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("No se ha podido modificar el ensayo por el siguiente motivo:\n" +
+			ex->Message);
+	}
+
+
+}
+
+	   //eliminar ensayo
+private: System::Void EliminarEnsayo_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ EnsayoID = IDEnsayoText->Text->Trim();
+	if (EnsayoID->Equals("")) {
+		MessageBox::Show("Debe seleccionar un ensayo(ID).");
+		return;
+	}
+	try {
+		System::Windows::Forms::DialogResult dlgResult = MessageBox::Show("¿Desea eliminar el ensayo?",
+			"Confirmación", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+		if (dlgResult == System::Windows::Forms::DialogResult::Yes) {
+			Controller::EliminarEnsayo(Convert::ToInt32(EnsayoID));
+			ShowEnsayo();
+			MessageBox::Show("Se ha eliminado el ensayo con Id = " + EnsayoID + " de manera exitosa.");
+		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("No ha sido posible eliminar el ensayo por el siguiente motivo:\n" +
+			ex->Message);
+	}
+
 }
 };
 }
