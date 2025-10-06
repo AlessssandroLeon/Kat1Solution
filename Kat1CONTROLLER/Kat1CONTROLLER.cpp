@@ -1,6 +1,54 @@
 #include "pch.h"
 
 #include "Kat1CONTROLLER.h"
+//ensayo
+
+int Kat1CONTROLLER::Controller::AgregarEnsayo(Ensayo^ Ensayo) {
+	try {
+		ensayos->Add(Ensayo);
+		return 1;
+	}
+	catch (Exception^ ex) {
+		throw ex;
+	}
+	return 0;
+}
+
+Ensayo^ Kat1CONTROLLER::Controller::ConsultaEnsayo(int EnsayoID) {
+	for each (Ensayo ^ ensayo in ensayos) {
+		if (ensayo->EnsayoID == EnsayoID) {
+			return ensayo;
+		}
+	}
+	return nullptr;
+}
+
+List<Ensayo^>^ Kat1CONTROLLER::Controller::ObtenerEnsayo() {
+	return ensayos;
+}
+int Kat1CONTROLLER::Controller::EliminarEnsayo(int EnsayoID)
+{
+	for (int i = 0; i < ensayos->Count; i++)
+	{
+		if (ensayos[i]->EnsayoID == EnsayoID) {
+			ensayos->RemoveAt(i);
+			return 1;
+		}
+	}
+	return 0;
+}
+
+int Kat1CONTROLLER::Controller::ModificarEnsayo(Ensayo^ Ensayo)
+{
+	for (int i = 0; i < ensayos->Count; i++)
+	{
+		if (ensayos[i]->EnsayoID == Ensayo->EnsayoID) {
+			ensayos[i] = Ensayo;
+			return 1;
+		}
+	}
+	return 0;
+}
 
 //planta
 int Kat1CONTROLLER::Controller::AgregarPlanta(Planta^ Planta) {
